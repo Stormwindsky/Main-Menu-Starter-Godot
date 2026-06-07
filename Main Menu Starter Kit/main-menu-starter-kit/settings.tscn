@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://d3065pck2fiii"]
+
+[ext_resource type="Script" uid="uid://c803f4ijuuwp7" path="res://Scripts_Main_Menu/settings.gd" id="1_nkug2"]
+[ext_resource type="AudioStream" uid="uid://drjybgpkmjtj8" path="res://Audios/Musics/Main_Menu.ogg" id="1_x2hje"]
+
+[sub_resource type="Gradient" id="Gradient_kpxow"]
+offsets = PackedFloat32Array(0, 0.43373495, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jwo76"]
+gradient = SubResource("Gradient_kpxow")
+
+[sub_resource type="LabelSettings" id="LabelSettings_x2hje"]
+font_size = 40
+
+[node name="Settings" type="Control" unique_id=1906317649]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nkug2")
+
+[node name="Background" type="TextureRect" parent="." unique_id=784497948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_jwo76")
+
+[node name="Title" type="Label" parent="." unique_id=1308583017]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 161.0
+offset_right = 225.0
+offset_bottom = 212.0
+grow_horizontal = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_x2hje")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="." unique_id=767368846]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 568.0
+offset_right = 238.0
+offset_bottom = 618.0
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=928992797]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 4.0
+offset_right = 116.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Test Sounds" type="Button" parent="VBoxContainer" unique_id=188236497]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "TEST SOUNDS"
+
+[node name="Test Music" type="Button" parent="VBoxContainer" unique_id=1323143569]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "TEST MUSICS"
+
+[node name="MainMenu" type="AudioStreamPlayer2D" parent="VBoxContainer" unique_id=262709723]
+position = Vector2(-131, 69)
+stream = ExtResource("1_x2hje")
+autoplay = true
+
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]

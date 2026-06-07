@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ceslwmgmpl1vi"]
+
+[sub_resource type="Gradient" id="Gradient_kpxow"]
+offsets = PackedFloat32Array(0, 0.43373495, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e1ve4"]
+gradient = SubResource("Gradient_kpxow")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ypsn"]
+font_size = 40
+
+[node name="DELETE_THIS" type="Control" unique_id=1700828703]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1302483933]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_e1ve4")
+
+[node name="TitleDemo" type="Label" parent="." unique_id=537620686]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 161.0
+offset_right = 225.0
+offset_bottom = 212.0
+grow_horizontal = 2
+text = "THE END OF THIS KIT
+YOU CAN DELETE THIS SCENE ON GODOT EDITOR BC YEAH"
+label_settings = SubResource("LabelSettings_7ypsn")
